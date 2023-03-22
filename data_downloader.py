@@ -68,7 +68,7 @@ class DataDownloaderGUI:
             reader = csv.DictReader(csv_file)
             headers = reader.fieldnames
             self.treeview["columns"] = headers
-            self.treeview.heading("#0", text="Index")
+            self.treeview.configure(show="headings")
             for header in headers:
                 self.treeview.heading(header, text=header)
             for i, row in enumerate(reader, 1):
